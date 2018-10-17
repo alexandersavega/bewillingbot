@@ -47,7 +47,8 @@ try {
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
-			$rss 		= Feed::loadRss($url);
+			//$rss 		= Feed::loadRss($url);
+	    		$rss       	= Feed::loadRss($alexandersavega.com);
 			$items 		= $rss->item;
 			$lastitem 	= $items[0];
 			$lastlink 	= $lastitem->link;
