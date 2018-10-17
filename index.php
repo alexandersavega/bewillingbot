@@ -39,7 +39,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog\n/help -> Shows list of available commands"
+    		'text' => "Comandi:\n /email -> E-mail di Alexander Savega \n /latest -> Ultimi post del Blog\n/aiuto -> Mostra la lista dei comandi"
     		]);
 
     }
