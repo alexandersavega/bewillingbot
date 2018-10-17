@@ -34,13 +34,12 @@ try {
         	'text' => "You can send email to : alexandersavega@gmail.com"
      	]);
     }
-    else if($update->message->text == '/help')
+    else if($update->message->text == '/aiuto')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
-    		/help -> Shows list of available commands"
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog\n/help -> Shows list of available commands"
     		]);
 
     }
