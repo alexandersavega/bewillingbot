@@ -43,12 +43,19 @@ try {
     		]);
 
     }
+	
+    else if($update->message->text == '/Blog)
+    {
+    	$response = $client->sendMessage([
+	'text' => "Blog:\n /Blog -> alexandersavega.com
+	]);
+    
+    }
     else if($update->message->text == '/latest')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
-			//$rss 		= Feed::loadRss($url);
-	    		$rss       	= Feed::loadRss($alexandersavega.com);
+			$rss 		= Feed::loadRss($url);
 			$items 		= $rss->item;
 			$lastitem 	= $items[0];
 			$lastlink 	= $lastitem->link;
