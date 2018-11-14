@@ -1,5 +1,4 @@
 <?php
-
 /*
 * This file is part of GeeksWeb Bot (GWB).
 *
@@ -18,14 +17,11 @@
 *
 */
 require 'vendor/autoload.php';
-
 $client = new Zelenin\Telegram\Bot\Api('629602244:AAE5LByqg5vJ0ZLrMf3nouRYKtroddvdJmI'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
-
 //your app
 try {
-
     if($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
@@ -41,10 +37,9 @@ try {
     		'chat_id' => $update->message->chat->id,
     		'text' => "Comandi:\n /email -> E-mail di Alexander Savega \n /latest -> Ultimi post del Blog\n/aiuto -> Mostra la lista dei comandi"
     		]);
-
     }
 	
-    else if($update->message->text == '/Blog')
+    else if($update->message->text == '/Blog)
     {
     	$response = $client->sendMessage([
 	'text' => "Blog:\n /Blog -> alexandersavega.com
@@ -66,7 +61,6 @@ try {
 					'chat_id' => $update->message->chat->id,
 					'text' => $message
 				]);
-
     }
     else
     {
@@ -76,10 +70,7 @@ try {
     		'text' => "Invalid command, please use /help to get list of available commands"
     		]);
     }
-
 } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
-
     //echo error message ot log it
     //echo $e->getMessage();
-
 }
