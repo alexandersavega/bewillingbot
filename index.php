@@ -44,7 +44,7 @@ try {
 
     }
 	
-    else if($update->message->text == '/Blog)
+    else if($update->message->text == '/Blog')
     {
     	$response = $client->sendMessage([
 	'text' => "Blog:\n /Blog -> alexandersavega.com
